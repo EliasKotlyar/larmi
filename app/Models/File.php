@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class File extends Model
 {
@@ -20,6 +21,11 @@ class File extends Model
     public function slides()
     {
         return $this->hasMany(Slide::class);
+    }
+
+    public function getPath()
+    {
+        return Storage::path($this->file_path);
     }
 
 }
