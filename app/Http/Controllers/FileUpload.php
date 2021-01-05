@@ -40,7 +40,7 @@ class FileUpload extends Controller
     {
         $tmpDirectory = Storage::path("public/tmp");
         $tmpFile = $tmpDirectory . "/tmp.pdf";
-        $cmd = "unoconv -f pdf  -o " . $tmpFile . " " . $fileName;
+        $cmd = "HOME=/tmp unoconv -f pdf  -o " . $tmpFile . " " . $fileName;
         shell_exec($cmd);
         return $tmpFile;
     }
