@@ -16,17 +16,14 @@ use App\Http\Controllers\FileUpload;
 */
 
 
-Route::get('/', [FileUpload::class, 'createForm'])->name('home');
 
-Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+
 
 Route::get('/view/{file}', [ViewController::class, 'viewAction'])->name('admonitor/show');
-Auth::routes();
-
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home2');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', [\App\Http\Controllers\Admonitor\Overview::class, 'viewAction']);
+    Route::get('/', [\App\Http\Controllers\Admonitor\Overview::class, 'viewAction'])->name('home');;
+    Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
 
 
@@ -42,5 +39,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
