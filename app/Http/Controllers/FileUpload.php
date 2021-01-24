@@ -11,7 +11,7 @@ class FileUpload extends Controller
 {
     public function createForm()
     {
-        return view('file-upload');
+        return view('admonitor/filesoverview');
     }
 
     public function getFileExtension($fileName)
