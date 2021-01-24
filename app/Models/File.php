@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
 class File extends Model
@@ -23,9 +24,18 @@ class File extends Model
         return $this->hasMany(Slide::class);
     }
 
+    public function slidesCount()
+    {
+        return count($this->slides);
+    }
+
     public function getPath()
     {
         return Storage::path($this->file_path);
+    }
+
+    public function getUrl(){
+        return route('admonitor/show', ['file' => $this->id]);
     }
 
 }

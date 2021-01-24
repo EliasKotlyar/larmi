@@ -20,7 +20,7 @@ Route::get('/', [FileUpload::class, 'createForm']);
 
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
 
-Route::get('/view/{file}', [ViewController::class, 'viewAction'])->name('view');
+Route::get('/view/{file}', [ViewController::class, 'viewAction'])->name('admonitor/show');
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
