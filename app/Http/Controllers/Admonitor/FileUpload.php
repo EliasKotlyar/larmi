@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 
-class AddToLibrary extends Controller
+class FileUpload extends Controller
 {
 
     public function getFileExtension($fileName)

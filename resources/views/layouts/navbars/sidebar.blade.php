@@ -79,14 +79,15 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('home') }}" style="color: #f4645f;">
+                    <a class="nav-link" href="{{ route('home') }}" >
                         <i class="ni ni-tv-2 text-primary" ></i> {{ __('Dashboard') }}
                     </a>
                 </li>
                 <li class="nav-item">
-
+                    <a class="nav-link" href="{{ route('upload') }}">
+                        <i class="ni ni-cloud-upload-96 text-blue"></i> {{ __('Datei hochladen') }}
+                    </a>
                 </li>
-
             </ul>
             <!-- Divider -->
             <hr class="my-3">

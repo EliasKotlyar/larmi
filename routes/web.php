@@ -23,7 +23,8 @@ Route::get('/view/{file}', [ViewController::class, 'viewAction'])->name('admonit
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', [\App\Http\Controllers\Admonitor\Overview::class, 'viewAction'])->name('home');;
-    Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');
+    Route::get('/upload', [\App\Http\Controllers\Admonitor\FileUploadDialog::class, 'viewAction'])->name('upload');
+    Route::post('/upload', [\App\Http\Controllers\Admonitor\FileUpload::class, 'fileUpload'])->name('fileupload');
 
 
 
